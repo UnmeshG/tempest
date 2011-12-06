@@ -11,8 +11,9 @@ class BuildErrorException(Exception):
 
 
 class BadRequest(Exception):
-    def __init__(self, message):
+    def __init__(self, message, response_headers=None):
         self.message = message
+        self.response_headers = response_headers
 
     def __str__(self):
         return repr(self.message)
